@@ -71,3 +71,11 @@ nav[data-toggle='toc'] {
     display: block;
   }
 }
+
+.col-sm-9 > h2 {
+  text-align: center;
+}
+
+nav[data-toggle=toc] .nav > li > a {
+  color: #313131;
+}
