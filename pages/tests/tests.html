@@ -33,106 +33,71 @@
 
 <div class="container">
     <div class="well">
-        <center><b>Тест</b></center>
-        <br/><br/>
-        &nbsp;&nbsp;&nbsp;<span style="color:#006699;text-decoration:underline;cursor:pointer;"
-                                onclick="document.getElementById('instruction').style.display = showhide(document.getElementById('instruction').style.display)">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11">
+                <center><b>Тест</b></center>
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;<span style="color:#006699;text-decoration:underline;cursor:pointer;"
+                                        onclick="document.getElementById('instruction').style.display = showhide(document.getElementById('instruction').style.display)">
 Инструкция</span>
-        <br/>
-        <div id="instruction" style="display: none; width: 100%;">
-            <ul>
-                <li>Выберите один из вариантов в каждом из 10 вопросов;</li>
-                <li>Нажмите на кнопку "Показать результат";</li>
-                <li>Скрипт не покажет результат, пока Вы не ответите на все вопросы;</li>
-                <li>Загляните в окно рядом с номером задания. Если ответ правильный, то там (+). Если Вы ошиблись, там
-                    (-).
-                </li>
-                <li>За каждый правильный ответ начисляется 1 балл;</li>
-                <li>Оценки: менее 5 баллов - НЕУДОВЛЕТВОРИТЕЛЬНО, от 5 но менее 7.5 - УДОВЛЕТВОРИТЕЛЬНО, 7.5 и менее 10
-                    - ХОРОШО, 10 - ОТЛИЧНО;
-                </li>
-                <li>Чтобы сбросить результат тестирования, нажать кнопку "Сбросить ответы";</li>
-            </ul>
+                <br/>
+                <div id="instruction" style="display: none; width: 100%;">
+                    <ul>
+                        <li>Выберите один из вариантов в каждом из 10 вопросов;</li>
+                        <li>Нажмите на кнопку "Показать результат";</li>
+                        <li>Скрипт не покажет результат, пока Вы не ответите на все вопросы;</li>
+                        <li>Загляните в окно рядом с номером задания. Если ответ правильный, то там (+). Если Вы
+                            ошиблись, там
+                            (-).
+                        </li>
+                        <li>За каждый правильный ответ начисляется 1 балл;</li>
+                        <li>Оценки: менее 5 баллов - НЕУДОВЛЕТВОРИТЕЛЬНО, от 5 но менее 7.5 - УДОВЛЕТВОРИТЕЛЬНО, 7.5 и
+                            менее 10
+                            - ХОРОШО, 10 - ОТЛИЧНО;
+                        </li>
+                        <li>Чтобы сбросить результат тестирования, нажать кнопку "Сбросить ответы";</li>
+                    </ul>
+                </div>
+                <form name="test">
+                    <script src="../../js/tests.js"></script>
+                    <script>
+                        shuffle(tests, answers);
+                    </script>
+                    <ol>
+                        <li><INPUT type="text" size="1" readonly name="T1" id="T1"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T2" id="T2"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T3" id="T3"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T4" id="T4"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T5" id="T5"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T6" id="T6"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T7" id="T7"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T8" id="T8"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T9" id="T9"/></li>
+                        <li><INPUT type="text" size="1" readonly name="T10" id="T10"/></li>
+                    </ol>
+                    <script>
+                        generateTest(1, 'T1');
+                        generateTest(2, 'T2');
+                        generateTest(3, 'T3');
+                        generateTest(4, 'T4');
+                        generateTest(5, 'T5');
+                        generateTest(6, 'T6');
+                        generateTest(7, 'T7');
+                        generateTest(8, 'T8');
+                        generateTest(9, 'T9');
+                        generateTest(10, 'T10');
+                    </script>
+                    <CENTER>
+                        <P><TEXTAREA name="s1" rows="4" cols="70" readonly> </TEXTAREA></P>
+                        <INPUT onclick="check_me()" type="button" value="Показать результат"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <INPUT type="reset" value="Сбросить ответы"/>
+                    </CENTER>
+                </form>
+            </div>
         </div>
-        <form name="test">
-            <ol>
-                <li><INPUT type="text" size="1" name="T1"/><b> В1</b><br/>
-                    <input type="radio" name="Q1"/> 1<br/>
-                    <input type="radio" name="Q1"/> 2<br/>
-                    <input type="radio" name="Q1"/> 3<br/>
-                    <input type="radio" name="Q1"/> 4<br/>
-                    <input type="radio" name="Q1"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T2"/><b> в2</b><br/>
-                    <input type="radio" name="Q2"/> 1<br/>
-                    <input type="radio" name="Q2"/> 2<br/>
-                    <input type="radio" name="Q2"/> 3<br/>
-                    <input type="radio" name="Q2"/> 4<br/>
-                    <input type="radio" name="Q2"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T3"/><b> в3</b><br/>
-                    <input type="radio" name="Q3"/> 1<br/>
-                    <input type="radio" name="Q3"/> 2<br/>
-                    <input type="radio" name="Q3"/> 3<br/>
-                    <input type="radio" name="Q3"/> 4<br/>
-                    <input type="radio" name="Q3"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T4"/><b> в4</b><br/>
-                    <input type="radio" name="Q4"/> 1<br/>
-                    <input type="radio" name="Q4"/> 2<br/>
-                    <input type="radio" name="Q4"/> 3<br/>
-                    <input type="radio" name="Q4"/> 4<br/>
-                    <input type="radio" name="Q4"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T5"/><b> в5</b><br/>
-                    <input type="radio" name="Q5"/> 1<br/>
-                    <input type="radio" name="Q5"/> 2<br/>
-                    <input type="radio" name="Q5"/> 3<br/>
-                    <input type="radio" name="Q5"/> 4<br/>
-                    <input type="radio" name="Q5"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T6"/><b> в6</b><br/>
-                    <input type="radio" name="Q6"/> 1<br/>
-                    <input type="radio" name="Q6"/> 2<br/>
-                    <input type="radio" name="Q6"/> 3<br/>
-                    <input type="radio" name="Q6"/> 4<br/>
-                    <input type="radio" name="Q6"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T7"/><b> в7</b><br/>
-                    <input type="radio" name="Q7"/> 1<br/>
-                    <input type="radio" name="Q7"/> 2<br/>
-                    <input type="radio" name="Q7"/> 3<br/>
-                    <input type="radio" name="Q7"/> 4<br/>
-                    <input type="radio" name="Q7"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T8"/><b> в8</b><br/>
-                    <input type="radio" name="Q8"/> 1<br/>
-                    <input type="radio" name="Q8"/> 2<br/>
-                    <input type="radio" name="Q8"/> 3<br/>
-                    <input type="radio" name="Q8"/> 4<br/>
-                    <input type="radio" name="Q8"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T9"/><b> в9</b><br/>
-                    <input type="radio" name="Q9"/> 1<br/>
-                    <input type="radio" name="Q9"/> 2<br/>
-                    <input type="radio" name="Q9"/> 3<br/>
-                    <input type="radio" name="Q9"/> 4<br/>
-                    <input type="radio" name="Q9"/> 5<br/>
-                    <br/></li>
-                <li><INPUT type="text" size="1" name="T10"/><b> в10</b><br/>
-                    <input type="radio" name="Q10"/> 1<br/>
-                    <input type="radio" name="Q10"/> 2<br/>
-                    <input type="radio" name="Q10"/> 3<br/>
-                    <input type="radio" name="Q10"/> 4<br/>
-                    <input type="radio" name="Q10"/> 5<br/>
-                    <br/></li>
-            </ol>
-            <CENTER>
-                <P><TEXTAREA name="s1" rows="4" cols="70" readonly> </TEXTAREA></P>
-                <INPUT onclick="check_me()" type="button" value="Показать результат"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <INPUT type="reset" value="Сбросить ответы"/>
-            </CENTER>
-        </form>
+
+
     </div>
 </div>
 
@@ -145,6 +110,6 @@
 <script src="../../js/jquery-3.1.1.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/tests.js"></script>
+
 </body>
 </html>

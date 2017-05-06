@@ -1,6 +1,6 @@
-var res = "1111111111"
+var res = "";
 function check_me() {
-    var count = 0
+    var count = 0;
     with (document.test) {
         if (!Q1[0].checked && !Q1[1].checked && !Q1[2].checked && !Q1[3].checked && !Q1[4].checked) {
             count += 1
@@ -47,6 +47,44 @@ function check_me() {
         }
         else answer()
     }
+}
+
+var tests = ["в1", "в2", "в3", "в4", "в5", "в6", "в7", "в8", "в9", "в10", "в11", "в12", "в13", "в14"];
+
+var answers = [
+    ["1", "1a1", "a2", "a3", "a4", "a5"],
+    ["2", "2a1", "a2", "a3", "a4", "a5"],
+    ["3", "3a1", "a2", "a3", "a4", "a5"],
+    ["4", "4a1", "a2", "a3", "a4", "a5"],
+    ["5", "5a1", "a2", "a3", "a4", "a5"],
+    ["1", "6a1", "a2", "a3", "a4", "a5"],
+    ["2", "7a1", "a2", "a3", "a4", "a5"],
+    ["3", "8a1", "a2", "a3", "a4", "a5"],
+    ["4", "9a1", "a2", "a3", "a4", "a5"],
+    ["5", "10a1", "a2", "a3", "a4", "a5"],
+    ["1", "11a1", "a2", "a3", "a4", "a5"],
+    ["2", "12a1", "a2", "a3", "a4", "a5"],
+    ["3", "13a1", "a2", "a3", "a4", "a5"],
+    ["4", "14a1", "a2", "a3", "a4", "a5"]
+];
+
+function shuffle(a, b) {
+    for (var i = a.length; i; i--) {
+        var j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        [b[i - 1], b[j]] = [b[j], b[i - 1]];
+    }
+}
+
+function generateTest(num, id) {
+    var test = window.document.getElementById(id);
+    var ans = answers.pop();
+    res = res + ans[0];
+    test.insertAdjacentHTML("afterend", "<b> " + tests.pop() + "</b><br/><input type='radio' name='Q" + num + "'/>" + ans[1] + "<br/>" +
+        "<input type='radio' name='Q" + num + "'/>" + ans[2] + "<br/>" +
+        "<input type='radio' name='Q" + num + "'/>" + ans[3] + "<br/>" +
+        "<input type='radio' name='Q" + num + "'/>" + ans[4] + "<br/>" +
+        "<input type='radio' name='Q" + num + "'/>" + ans[5] + "<br/><br/>");
 }
 
 function control(k, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10) {
